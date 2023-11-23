@@ -24,7 +24,8 @@ SELECT Pname, Pnumber, Plocation, Dnum FROM `project`;
 Display each employee full name and his annual commission in an ANNUAL COMM column (alias).
 
 */
-SELECT Fname, Lname, ((employee.Salary * 10) / 100) AS Commision FROM `employee`;
+/* Annual Commision multiply by 12*/
+SELECT Fname, Lname, ((employee.Salary * 10 * 12) / 100) AS Commision FROM `employee`;
 
 /*
 4- Display the employees Id, fname who earns more than 1000 LE.
@@ -67,7 +68,8 @@ Then Insert 3 rows only
         `ESSN` int(10) NOT NULL DEFAULT 0,
         `Dependent_name` varchar(100) NOT NULL ,  
         `Gender` varchar(50) DEFAULT NULL,
-        `Bdate` timestamp(6) NULL DEFAULT NULL, 
+        `Bdate` timestamp(6) NULL DEFAULT NULL,
+        PRIMARY KEY (`ESSN` , `Dependent_name`) ,
         CONSTRAINT `emp_fk` FOREIGN KEY (`ESSN`) REFERENCES `employee` (`SSN`)
     )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
