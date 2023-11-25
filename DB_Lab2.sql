@@ -25,7 +25,7 @@ Display each employee full name and his annual commission in an ANNUAL COMM colu
 
 */
 /* Annual Commision multiply by 12*/
-SELECT Fname, Lname, ((employee.Salary * 10 * 12) / 100) AS Commision FROM `employee`;
+SELECT Fname, Lname, ((employee.Salary * 12 * 10 ) / 100) AS Commision FROM `employee`;
 
 /*
 4- Display the employees Id, fname who earns more than 1000 LE.
